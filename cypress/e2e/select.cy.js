@@ -14,7 +14,7 @@ describe('Select', () => {
             .select('Cypress')
     })
 
-    it.only('Deve escolher as linguagens que usam node.js', ()=>{
+    it('Deve escolher as linguagens que usam node.js', ()=>{
 
         const langs = ['JavaScript', 'TypeScript']
 
