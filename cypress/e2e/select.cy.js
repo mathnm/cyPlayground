@@ -22,12 +22,14 @@ describe('Select', () => {
             .click()
 
         langs.forEach(lang =>{
-            cy.contains('.option-item', lang)
+            cy.contains('.option-item', new RegExp("^" + lang + "$"))
                 .click() 
         })
+
+        cy.get('.language-item')
+            .should('have.length', langs.length)
+
     })
 
 
 })
-
-//teste
