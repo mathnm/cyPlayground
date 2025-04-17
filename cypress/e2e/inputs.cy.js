@@ -5,8 +5,7 @@ describe('Inpute Fields', () => {
     })
 
     it('deve preencher o campo texto', () => {
-        cy.login('papito@cyskills.com.br', 'showtime')
-        cy.userLoggedIn()
+        cy.doLogin()
 
         cy.goTo('/input-fields', 'Input Fields')
 

@@ -5,8 +5,7 @@ describe('Textarea', () => {
     })
 
     it('deve preencher o campo de area de texto', () => {
-        cy.login('papito@cyskills.com.br', 'showtime')
-        cy.userLoggedIn()
+        cy.doLogin()
 
         cy.goTo('/textarea', 'Textarea')
 

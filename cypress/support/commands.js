@@ -30,9 +30,19 @@ Cypress.Commands.add('goHome', () => {
     cy.contains('h2', 'Faça login').should('be.visible')
 })
 
+Cypress.Commands.add('doLogin', () => {
+    cy.login('papito@cyskills.com.br', 'showtime')
+    cy.userLoggedIn()
+})
+
 Cypress.Commands.add('login', (email, senha) => {
-    cy.get('[data-cy="email"]').type(email)
-    cy.get('[data-cy="password"]').type(senha)
+    if(email){
+        cy.get('[data-cy="email"]').type(email)        
+    }
+    
+    if(senha){
+        cy.get('[data-cy="password"]').type(senha)
+    }
 
     cy.get('[data-cy="login-button"]').click()
 })
